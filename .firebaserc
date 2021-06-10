@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kanbanfire-b9207": {
+      "hosting": {
+        "my-app": [
+          "kanbanfire-b9207"
+        ]
+      }
+    }
+  }
+}
