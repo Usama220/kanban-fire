@@ -22,9 +22,9 @@ import { Observable , BehaviorSubject  } from 'rxjs';
 export class AppComponent {
   constructor(private dialog: MatDialog , private store: AngularFirestore) {}
 
-  todo = this.store.collection('todo | async').valueChanges({ idField: 'id' }) as Observable<Task[]>;
-  inProgress = this.store.collection('inProgress | async').valueChanges({ idField: 'id' }) as Observable<Task[]>;
-  done = this.store.collection('done | async').valueChanges({ idField: 'id' }) as Observable<Task[]>;
+  todo = this.store.collection('todo').valueChanges({ idField: 'id' }) as Observable<Task[]>;
+  inProgress = this.store.collection('inProgress').valueChanges({ idField: 'id' }) as Observable<Task[]>;
+  done = this.store.collection('done').valueChanges({ idField: 'id' }) as Observable<Task[]>;
 
   newTask(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
@@ -86,6 +86,7 @@ export class AppComponent {
   // }
 
   drop(event: CdkDragDrop<Task[]>): void {
+    debugger
     if (event.previousContainer === event.container) {
       return;
     }
